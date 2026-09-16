@@ -37,9 +37,10 @@ yarn-error.log*
 # Chroma DB and large data
 backend/chroma_db/
 backend/public/uploads/
-Products/
 backend/.cache/
+backend/venv/
 backend/.env
+backend/__pycache__/
 
 # Logs
 .log
