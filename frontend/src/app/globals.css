@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0a0f;
+  --foreground: #f0f0f5;
+  --accent: #7c5cfc;
+  --accent-glow: rgba(124, 92, 252, 0.25);
+  --surface: #141420;
+  --surface-elevated: #1c1c2e;
+  --border: rgba(255, 255, 255, 0.06);
+  --border-accent: rgba(124, 92, 252, 0.3);
+  --text-muted: #8b8ba0;
+  --text-secondary: #b0b0c4;
+  --success: #34d399;
+  --warning: #fbbf24;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+}
+
+body {
+  background-color: #0a0a0f;
+  color: #f0f0f5;
+  font-family: var(--font-sans, 'Inter', system-ui, sans-serif);
+  margin: 0;
+  padding: 0;
+}
+
+/* Glassmorphism card */
+.glass-card {
+  background: rgba(20, 20, 32, 0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+}
+
+.glass-card-elevated {
+  background: rgba(28, 28, 46, 0.8);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Accent glow button */
+.btn-accent {
+  background: linear-gradient(135deg, #7c5cfc, #a78bfa);
+  color: white;
+  font-weight: 700;
+  border-radius: 0.875rem;
+  padding: 0.875rem 2rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px var(--accent-glow);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-accent:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(124, 92, 252, 0.45);
+}
+
+.btn-accent:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Ghost button */
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-weight: 600;
+  border-radius: 0.75rem;
+  padding: 0.625rem 1.25rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #7c5cfc 0%, #a78bfa 50%, #c4b5fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Product card hover */
+.product-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+/* Upload dropzone */
+.dropzone {
+  border: 2px dashed rgba(124, 92, 252, 0.25);
+  border-radius: 1rem;
+  background: rgba(124, 92, 252, 0.03);
+  transition: all 0.3s ease;
+}
+
+/* Color swatch */
+.color-swatch {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.625rem;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Stat pill */
+.stat-pill {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+}
+
+.room-viewer {
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  background: #050508;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+  max-height: 700px;
+}
+
+.room-viewer img {
+  max-width: 100%;
+  max-height: 700px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}

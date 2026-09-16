@@ -38,6 +38,8 @@ yarn-error.log*
 backend/chroma_db/
 backend/public/uploads/
 Products/
+backend/.cache/
+backend/.env
 
 # Logs
 .log
